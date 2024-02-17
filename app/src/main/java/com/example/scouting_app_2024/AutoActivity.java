@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AutoActivity extends AppCompatActivity {
+public class AutoActivity extends AppCompatActivity { //add count error
     CheckBox leaveCheck;
-    TextView autoNotesCountText, autoAmpNotesCountText, autoSpeakerNotesCountText;
-    byte autoNotesCount, autoAmpNotesCount, autoSpeakerNotesCount;
+    TextView autoNotesCountText, autoAmpNotesCountText, autoSpeakerNotesCountText, autoAmpNotesMissedCountText, autoSpeakerNotesMissedCountText;
+    byte autoNotesCount, autoAmpNotesCount, autoSpeakerNotesCount, autoAmpNotesMissedCount, autoSpeakerNotesMissedCount;
     EditText autoComments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class AutoActivity extends AppCompatActivity {
         autoNotesCountText = findViewById(R.id.autoNotesCountTextView);
         autoAmpNotesCountText = findViewById(R.id.autoAmpNotesCountTextView);
         autoSpeakerNotesCountText = findViewById(R.id.autoSpeakerNotesCountTextView);
+        autoAmpNotesMissedCountText = findViewById(R.id.autoAmpNotesMissedCountTextView);
+        autoSpeakerNotesMissedCountText = findViewById(R.id.autoSpeakerNotesMissedCountTextView);
         autoComments = findViewById(R.id.autoCommentsEditText);
         setPrevious();
     }
@@ -42,7 +44,7 @@ public class AutoActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void autoDecrementNotes(View view){
-        if (autoNotesCount != 0 && autoAmpNotesCount+autoSpeakerNotesCount<autoNotesCount){
+        if (autoNotesCount != 0 && autoAmpNotesCount+autoSpeakerNotesCount+autoSpeakerNotesMissedCount+autoSpeakerNotesMissedCount<autoNotesCount){
             autoNotesCount--;
             autoNotesCountText.setText(String.valueOf(autoNotesCount));
         }
@@ -97,6 +99,54 @@ public class AutoActivity extends AppCompatActivity {
     }
 
     /**
+     * Increments the amp notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoIncrementAmpNotesMissed(View view){
+        if (autoAmpNotesCount + autoSpeakerNotesCount + autoSpeakerNotesMissedCount + autoAmpNotesMissedCount< autoNotesCount){
+            autoAmpNotesMissedCount++;
+            autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
+        }
+    }
+
+    /**
+     * Decrements the amp notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoDecrementAmpNotesMissed(View view){
+        if (autoAmpNotesMissedCount != 0) {
+            autoAmpNotesMissedCount--;
+            autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
+        }
+    }
+
+    /**
+     * Increments the speaker notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoIncrementSpeakerNotesMissed(View view){
+        if (autoAmpNotesCount + autoSpeakerNotesCount + autoSpeakerNotesMissedCount + autoAmpNotesMissedCount< autoNotesCount){
+            autoSpeakerNotesMissedCount++;
+            autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
+        }
+    }
+
+    /**
+     * Decrements the speaker notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoDecrementSpeakerNotesMissed(View view){
+        if (autoSpeakerNotesMissedCount != 0) {
+            autoSpeakerNotesMissedCount--;
+            autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
+        }
+    }
+
+    /**
      * Moves the xml/page back to main
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
@@ -129,6 +179,10 @@ public class AutoActivity extends AppCompatActivity {
         autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
         autoSpeakerNotesCount = RecordsActivity.Info.autoSpeakerNotes;
         autoSpeakerNotesCountText.setText(String.valueOf(autoSpeakerNotesCount));
+        autoAmpNotesMissedCount = RecordsActivity.Info.autoAmpNotesMissed;
+        autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
+        autoSpeakerNotesMissedCount = RecordsActivity.Info.autoSpeakerNotesMissed;
+        autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
         autoComments.setText(RecordsActivity.Info.autoComments);
     }
 
@@ -140,6 +194,8 @@ public class AutoActivity extends AppCompatActivity {
         RecordsActivity.Info.autoNotes = autoNotesCount;
         RecordsActivity.Info.autoAmpNotes = autoAmpNotesCount;
         RecordsActivity.Info.autoSpeakerNotes = autoSpeakerNotesCount;
+        RecordsActivity.Info.autoAmpNotesMissed = autoAmpNotesMissedCount;
+        RecordsActivity.Info.autoSpeakerNotesMissed = autoSpeakerNotesMissedCount;
         RecordsActivity.Info.autoComments = autoComments.getText().toString();
     }
 }

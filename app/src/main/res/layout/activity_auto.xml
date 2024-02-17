@@ -10,10 +10,10 @@
         android:id="@+id/leaveCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="150dp"
+        android:buttonTint="@color/yellow"
         android:text="Leave"
         android:textColor="@color/white"
-        android:buttonTint="@color/yellow"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="backMain"
         android:text="Back"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,101 +39,49 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="toTele"
         android:text="Next"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/autoNotesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="Notes"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/autoNotesCountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/autoNotesIncrementButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="autoIncrementNotes"
-        android:text="+"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autoNotesCountTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/autoNotesCountTextView"
-        app:layout_constraintTop_toTopOf="@+id/autoNotesCountTextView" />
-
-    <Button
-        android:id="@+id/autoNotesDecrementButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="autoDecrementNotes"
-        android:text="-"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="@+id/autoNotesCountTextView"
-        app:layout_constraintEnd_toStartOf="@+id/autoNotesCountTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autoNotesCountTextView" />
 
     <TextView
         android:id="@+id/autoAmpNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
-        android:text="Amp Notes"
+        android:layout_marginTop="100dp"
+        android:text="Amp"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoBackButton"
+        app:layout_constraintStart_toStartOf="@+id/autoBackButton"
+        app:layout_constraintTop_toBottomOf="@+id/autoBackButton" />
 
     <TextView
         android:id="@+id/autoAmpNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoAmpNotesTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoAmpNotesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoAmpNotesTextView" />
 
     <Button
         android:id="@+id/autoAmpNotesIncrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="autoIncrementAmpNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/autoAmpNotesCountTextView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/autoAmpNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/autoAmpNotesCountTextView" />
 
@@ -141,51 +89,51 @@
         android:id="@+id/autoAmpNotesDecrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="autoDecrementAmpNotes"
         android:text="-"
-        android:textSize="48sp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/autoAmpNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/autoAmpNotesCountTextView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/autoAmpNotesCountTextView" />
 
     <TextView
         android:id="@+id/autoSpeakerNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="575dp"
-        android:text="Speaker Notes"
+        android:layout_marginTop="100dp"
+        android:text="Speaker"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoNextButton"
+        app:layout_constraintStart_toStartOf="@+id/autoNextButton"
+        app:layout_constraintTop_toBottomOf="@+id/autoNextButton" />
 
     <TextView
         android:id="@+id/autoSpeakerNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoSpeakerNotesTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoSpeakerNotesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoSpeakerNotesTextView" />
 
     <Button
         android:id="@+id/autoSpeakerNotesIncrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="autoIncrementSpeakerNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/autoSpeakerNotesCountTextView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/autoSpeakerNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/autoSpeakerNotesCountTextView" />
 
@@ -193,31 +141,31 @@
         android:id="@+id/autoSpeakerNotesDecrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="autoDecrementSpeakerNotes"
         android:text="-"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/autoSpeakerNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/autoSpeakerNotesCountTextView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/autoSpeakerNotesCountTextView" />
 
     <EditText
         android:id="@+id/autoCommentsEditText"
         android:layout_width="500dp"
         android:layout_height="75dp"
-        android:layout_marginTop="748dp"
-        android:ems="10"
-        android:hint="Comments (missed pieces, hitting other robots, incorrect auto, etc)"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
+        android:layout_marginTop="700dp"
         android:background="@color/grey"
+        android:ems="10"
         android:gravity="center"
+        android:hint="Comments (missed pieces, hitting other robots, incorrect auto, etc)"
         android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/autoSpeakerNotesMissedIncrementButton"
+        app:layout_constraintStart_toStartOf="@+id/autoAmpNotesMissedDecrementButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -231,5 +179,109 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autoAmpNotesMissedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Missed"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoAmpNotesCountTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoAmpNotesCountTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoAmpNotesCountTextView" />
+
+    <TextView
+        android:id="@+id/autoAmpNotesMissedCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoAmpNotesMissedTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoAmpNotesMissedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoAmpNotesMissedTextView" />
+
+    <Button
+        android:id="@+id/autoAmpNotesMissedDecrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoDecrementAmpNotesMissed"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoAmpNotesMissedCountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/autoAmpNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoAmpNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/autoAmpNotesMissedIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoIncrementAmpNotesMissed"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoAmpNotesMissedCountTextView"
+        app:layout_constraintStart_toEndOf="@+id/autoAmpNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoAmpNotesMissedCountTextView" />
+
+    <TextView
+        android:id="@+id/autoSpeakerNotesMissedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Missed"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoSpeakerNotesCountTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoSpeakerNotesCountTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoSpeakerNotesCountTextView" />
+
+    <TextView
+        android:id="@+id/autoSpeakerNotesMissedCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/autoSpeakerNotesMissedTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoSpeakerNotesMissedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoSpeakerNotesMissedTextView" />
+
+    <Button
+        android:id="@+id/autoSpeakerNotesMissedDecrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoDecrementSpeakerNotesMissed"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoSpeakerNotesMissedCountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/autoSpeakerNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoSpeakerNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/autoSpeakerNotesMissedIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoIncrementSpeakerNotesMissed"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoSpeakerNotesMissedCountTextView"
+        app:layout_constraintStart_toEndOf="@+id/autoSpeakerNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoSpeakerNotesMissedCountTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

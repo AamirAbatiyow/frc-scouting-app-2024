@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TeleActivity extends AppCompatActivity {
-    TextView teleNotesCountText, teleAmpNotesCountText, teleSpeakerNotesCountText;
-    byte teleNotesCount, teleAmpNotesCount, teleSpeakerNotesCount;
+    TextView teleNotesCountText, teleAmpNotesCountText, teleSpeakerNotesCountText, teleAmpNotesMissedCountText, teleSpeakerNotesMissedCountText;
+    byte teleNotesCount, teleAmpNotesCount, teleSpeakerNotesCount, teleAmpNotesMissedCount, teleSpeakerNotesMissedCount;
     EditText teleComments;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -21,6 +21,8 @@ public class TeleActivity extends AppCompatActivity {
         teleNotesCountText = findViewById(R.id.teleNotesCountTextView);
         teleAmpNotesCountText = findViewById(R.id.teleAmpNotesCountTextView);
         teleSpeakerNotesCountText = findViewById(R.id.teleSpeakerNotesCountTextView);
+        teleAmpNotesMissedCountText = findViewById(R.id.teleAmpNotesMissedCountTextView);
+        teleSpeakerNotesMissedCountText = findViewById(R.id.teleSpeakerNotesMissedCountTextView);
         teleComments = findViewById(R.id.teleCommentsEditText);
         setPrevious();
     }
@@ -41,7 +43,7 @@ public class TeleActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void teleDecrementNotes(View view){
-        if (teleNotesCount != 0 && teleSpeakerNotesCount + teleAmpNotesCount < teleNotesCount){
+        if (teleNotesCount != 0 && teleSpeakerNotesCount + teleAmpNotesCount + teleSpeakerNotesMissedCount + teleAmpNotesMissedCount< teleNotesCount){
             teleNotesCount--;
             teleNotesCountText.setText(String.valueOf(teleNotesCount));
         }
@@ -53,7 +55,7 @@ public class TeleActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void teleIncrementAmpNotes(View view){
-        if (teleAmpNotesCount + teleSpeakerNotesCount < teleNotesCount){
+        if (teleAmpNotesCount + teleSpeakerNotesCount + teleSpeakerNotesMissedCount + teleAmpNotesMissedCount< teleNotesCount){
             teleAmpNotesCount++;
             teleAmpNotesCountText.setText(String.valueOf(teleAmpNotesCount));  
         }
@@ -77,7 +79,7 @@ public class TeleActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void teleIncrementSpeakerNotes(View view){
-        if (teleAmpNotesCount + teleSpeakerNotesCount < teleNotesCount){
+        if (teleAmpNotesCount + teleSpeakerNotesCount + teleSpeakerNotesMissedCount + teleAmpNotesMissedCount< teleNotesCount){
             teleSpeakerNotesCount++;
             teleSpeakerNotesCountText.setText(String.valueOf(teleSpeakerNotesCount));  
         }
@@ -92,6 +94,54 @@ public class TeleActivity extends AppCompatActivity {
         if (teleSpeakerNotesCount != 0) {
             teleSpeakerNotesCount--;
             teleSpeakerNotesCountText.setText(String.valueOf(teleSpeakerNotesCount));
+        }
+    }
+
+    /**
+     * Increments the amp notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleIncrementAmpNotesMissed(View view){
+        if (teleAmpNotesCount + teleSpeakerNotesCount + teleSpeakerNotesMissedCount + teleAmpNotesMissedCount< teleNotesCount){
+            teleAmpNotesMissedCount++;
+            teleAmpNotesMissedCountText.setText(String.valueOf(teleAmpNotesMissedCount));
+        }
+    }
+
+    /**
+     * Decrements the amp notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleDecrementAmpNotesMissed(View view){
+        if (teleAmpNotesMissedCount != 0) {
+            teleAmpNotesMissedCount--;
+            teleAmpNotesMissedCountText.setText(String.valueOf(teleAmpNotesMissedCount));
+        }
+    }
+
+    /**
+     * Increments the speaker notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleIncrementSpeakerNotesMissed(View view){
+        if (teleAmpNotesCount + teleSpeakerNotesCount + teleSpeakerNotesMissedCount + teleAmpNotesMissedCount< teleNotesCount){
+            teleSpeakerNotesMissedCount++;
+            teleSpeakerNotesMissedCountText.setText(String.valueOf(teleSpeakerNotesMissedCount));
+        }
+    }
+
+    /**
+     * Decrements the speaker notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleDecrementSpeakerNotesMissed(View view){
+        if (teleSpeakerNotesMissedCount != 0) {
+            teleSpeakerNotesMissedCount--;
+            teleSpeakerNotesMissedCountText.setText(String.valueOf(teleSpeakerNotesMissedCount));
         }
     }
 
@@ -127,6 +177,10 @@ public class TeleActivity extends AppCompatActivity {
         teleAmpNotesCountText.setText(String.valueOf(teleAmpNotesCount));
         teleSpeakerNotesCount = RecordsActivity.Info.teleSpeakerNotes;
         teleSpeakerNotesCountText.setText(String.valueOf(teleSpeakerNotesCount));
+        teleAmpNotesMissedCount = RecordsActivity.Info.teleAmpNotesMissed;
+        teleAmpNotesMissedCountText.setText(String.valueOf(teleAmpNotesMissedCount));
+        teleSpeakerNotesMissedCount = RecordsActivity.Info.teleSpeakerNotesMissed;
+        teleSpeakerNotesMissedCountText.setText(String.valueOf(teleSpeakerNotesMissedCount));
         teleComments.setText(RecordsActivity.Info.teleComments);
     }
 
@@ -137,6 +191,8 @@ public class TeleActivity extends AppCompatActivity {
         RecordsActivity.Info.teleNotes = teleNotesCount;
         RecordsActivity.Info.teleAmpNotes = teleAmpNotesCount;
         RecordsActivity.Info.teleSpeakerNotes = teleSpeakerNotesCount;
+        RecordsActivity.Info.teleAmpNotesMissed = teleAmpNotesMissedCount;
+        RecordsActivity.Info.teleSpeakerNotesMissed = teleSpeakerNotesMissedCount;
         RecordsActivity.Info.teleComments = teleComments.getText().toString();
     }
 }
