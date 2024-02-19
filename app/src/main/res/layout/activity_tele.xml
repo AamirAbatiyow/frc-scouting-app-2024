@@ -50,20 +50,22 @@
         android:id="@+id/teleAmpNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
         android:text="Amp"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="351dp" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleBackButton"
+        app:layout_constraintStart_toStartOf="@+id/teleBackButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleBackButton" />
 
     <TextView
         android:id="@+id/teleAmpNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesTextView"
         app:layout_constraintStart_toStartOf="@+id/teleAmpNotesTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesTextView" />
@@ -77,7 +79,7 @@
         android:onClick="teleIncrementAmpNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleAmpNotesCountTextView" />
@@ -91,7 +93,7 @@
         android:onClick="teleDecrementAmpNotes"
         android:text="-"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleAmpNotesCountTextView" />
@@ -100,20 +102,22 @@
         android:id="@+id/teleSpeakerNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
         android:text="Speaker"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="393dp"
-        tools:layout_editor_absoluteY="351dp" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleNextButton"
+        app:layout_constraintStart_toStartOf="@+id/teleNextButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleNextButton" />
 
     <TextView
         android:id="@+id/teleSpeakerNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesTextView"
         app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesTextView" />
@@ -127,7 +131,7 @@
         android:onClick="teleIncrementSpeakerNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesCountTextView" />
@@ -141,7 +145,7 @@
         android:onClick="teleDecrementSpeakerNotes"
         android:text="-"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesCountTextView" />
@@ -167,10 +171,10 @@
         android:id="@+id/teleAmpNotesMissedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:text="Missed"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintStart_toStartOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesCountTextView" />
@@ -179,10 +183,10 @@
         android:id="@+id/teleSpeakerNotesMissedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:text="Missed"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesCountTextView" />
@@ -191,10 +195,10 @@
         android:id="@+id/teleAmpNotesMissedCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesMissedTextView"
         app:layout_constraintStart_toStartOf="@+id/teleAmpNotesMissedTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesMissedTextView" />
@@ -203,10 +207,10 @@
         android:id="@+id/teleSpeakerNotesMissedCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesMissedTextView"
         app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesMissedTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesMissedTextView" />
@@ -220,7 +224,7 @@
         android:onClick="teleDecrementAmpNotesMissed"
         android:text="-"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesMissedCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleAmpNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleAmpNotesMissedCountTextView" />
@@ -234,7 +238,7 @@
         android:onClick="teleIncrementAmpNotesMissed"
         android:text="+"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesMissedCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleAmpNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleAmpNotesMissedCountTextView" />
@@ -248,7 +252,7 @@
         android:onClick="teleDecrementSpeakerNotesMissed"
         android:text="-"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesMissedCountTextView" />
@@ -262,7 +266,7 @@
         android:onClick="teleIncrementSpeakerNotesMissed"
         android:text="+"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesMissedCountTextView" />

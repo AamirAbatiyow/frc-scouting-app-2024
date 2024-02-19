@@ -11,14 +11,12 @@ public class RecordsActivity {
         public static byte fieldPosition = 0;
         //auto activity
         public static boolean leave = false;
-        public static byte autoNotes = 0;
         public static byte autoAmpNotes = 0;
         public static byte autoSpeakerNotes = 0;
         public static byte autoAmpNotesMissed = 0;
         public static byte autoSpeakerNotesMissed = 0;
         public static String autoComments = "";
         //tele activity
-        public static byte teleNotes = 0;
         public static byte teleAmpNotes = 0;
         public static byte teleSpeakerNotes = 0;
         public static byte teleAmpNotesMissed = 0;
@@ -72,7 +70,6 @@ public class RecordsActivity {
             json += String.format("\tStarting Position: \"%s\",",fieldPosition);
             //auto activity
             json += String.format("\n\tLeave: \"%s\",",printBoolean(leave));
-            json += String.format("\tAutoNote: \"%s\",",autoNotes);
             json += String.format("\tAutoAmp: \"%s\",",autoAmpNotes);
             json += String.format("\tAutoSpeaker: \"%s\",",autoSpeakerNotes);
             json += String.format("\tAutoAmpMissed: \"%s\",",autoAmpNotesMissed);
@@ -81,7 +78,6 @@ public class RecordsActivity {
             json += String.format("\tAutoSpeakerPercentage: \"%s\",",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
             json += String.format("\tAutoComment: \"%s\",",autoComments);
             //tele activity
-            json += String.format("\n\tTeleNote: \"%s\",",teleNotes);
             json += String.format("\tTeleAmp: \"%s\",",teleAmpNotes);
             json += String.format("\tTeleSpeaker: \"%s\",",teleSpeakerNotes);
             json += String.format("\tTeleAmpMissed: \"%s\",",teleAmpNotesMissed);
@@ -109,14 +105,12 @@ public class RecordsActivity {
             fieldPosition = 0;
             //auto activity
             leave = false;
-            autoNotes = 0;
             autoAmpNotes = 0;
             autoSpeakerNotes = 0;
             autoAmpNotesMissed = 0;
             autoSpeakerNotesMissed = 0;
             autoComments = "";
             //tele activity
-            teleNotes = 0;
             teleAmpNotes = 0;
             teleSpeakerNotes = 0;
             teleAmpNotesMissed = 0;

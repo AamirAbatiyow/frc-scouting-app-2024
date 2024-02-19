@@ -9,17 +9,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AutoActivity extends AppCompatActivity { //add count error
+public class AutoActivity extends AppCompatActivity {
     CheckBox leaveCheck;
-    TextView autoNotesCountText, autoAmpNotesCountText, autoSpeakerNotesCountText, autoAmpNotesMissedCountText, autoSpeakerNotesMissedCountText;
-    byte autoNotesCount, autoAmpNotesCount, autoSpeakerNotesCount, autoAmpNotesMissedCount, autoSpeakerNotesMissedCount;
+    TextView autoAmpNotesCountText, autoSpeakerNotesCountText, autoAmpNotesMissedCountText, autoSpeakerNotesMissedCountText;
+    byte autoAmpNotesCount, autoSpeakerNotesCount, autoAmpNotesMissedCount, autoSpeakerNotesMissedCount;
     EditText autoComments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto);
         leaveCheck = findViewById(R.id.leaveCheckBox);
-        autoNotesCountText = findViewById(R.id.autoNotesCountTextView);
         autoAmpNotesCountText = findViewById(R.id.autoAmpNotesCountTextView);
         autoSpeakerNotesCountText = findViewById(R.id.autoSpeakerNotesCountTextView);
         autoAmpNotesMissedCountText = findViewById(R.id.autoAmpNotesMissedCountTextView);
@@ -29,37 +28,13 @@ public class AutoActivity extends AppCompatActivity { //add count error
     }
 
     /**
-     * Increments the notes count and updates the text
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void autoIncrementNotes(View view){
-        autoNotesCount++;
-        autoNotesCountText.setText(String.valueOf(autoNotesCount));
-    }
-
-    /**
-     * Decrements the notes count and updates the text
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void autoDecrementNotes(View view){
-        if (autoNotesCount != 0 && autoAmpNotesCount+autoSpeakerNotesCount+autoSpeakerNotesMissedCount+autoSpeakerNotesMissedCount<autoNotesCount){
-            autoNotesCount--;
-            autoNotesCountText.setText(String.valueOf(autoNotesCount));
-        }
-    }
-
-    /**
      * Increments the amp notes count and updates the text
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void autoIncrementAmpNotes(View view){
-        if (autoAmpNotesCount+autoSpeakerNotesCount<autoNotesCount+1){
-            autoAmpNotesCount++;
-            autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
-        }
+        autoAmpNotesCount++;
+        autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
     }
 
     /**
@@ -80,10 +55,8 @@ public class AutoActivity extends AppCompatActivity { //add count error
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void autoIncrementSpeakerNotes(View view){
-        if (autoAmpNotesCount+autoSpeakerNotesCount<autoNotesCount+1) {
-            autoSpeakerNotesCount++;
-            autoSpeakerNotesCountText.setText(String.valueOf(autoSpeakerNotesCount));
-        }
+        autoSpeakerNotesCount++;
+        autoSpeakerNotesCountText.setText(String.valueOf(autoSpeakerNotesCount));
     }
 
     /**
@@ -104,10 +77,8 @@ public class AutoActivity extends AppCompatActivity { //add count error
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void autoIncrementAmpNotesMissed(View view){
-        if (autoAmpNotesCount + autoSpeakerNotesCount + autoSpeakerNotesMissedCount + autoAmpNotesMissedCount< autoNotesCount){
-            autoAmpNotesMissedCount++;
-            autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
-        }
+        autoAmpNotesMissedCount++;
+        autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
     }
 
     /**
@@ -128,10 +99,8 @@ public class AutoActivity extends AppCompatActivity { //add count error
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void autoIncrementSpeakerNotesMissed(View view){
-        if (autoAmpNotesCount + autoSpeakerNotesCount + autoSpeakerNotesMissedCount + autoAmpNotesMissedCount< autoNotesCount){
-            autoSpeakerNotesMissedCount++;
-            autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
-        }
+        autoSpeakerNotesMissedCount++;
+        autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
     }
 
     /**
@@ -173,8 +142,6 @@ public class AutoActivity extends AppCompatActivity { //add count error
      */
     public void setPrevious(){
         leaveCheck.setChecked(RecordsActivity.Info.leave);
-        autoNotesCount = RecordsActivity.Info.autoNotes;
-        autoNotesCountText.setText(String.valueOf(autoNotesCount));
         autoAmpNotesCount = RecordsActivity.Info.autoAmpNotes;
         autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
         autoSpeakerNotesCount = RecordsActivity.Info.autoSpeakerNotes;
@@ -191,7 +158,6 @@ public class AutoActivity extends AppCompatActivity { //add count error
      */
     public void saveData(){
         RecordsActivity.Info.leave = leaveCheck.isChecked();
-        RecordsActivity.Info.autoNotes = autoNotesCount;
         RecordsActivity.Info.autoAmpNotes = autoAmpNotesCount;
         RecordsActivity.Info.autoSpeakerNotes = autoSpeakerNotesCount;
         RecordsActivity.Info.autoAmpNotesMissed = autoAmpNotesMissedCount;

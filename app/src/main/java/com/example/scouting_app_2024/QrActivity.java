@@ -21,7 +21,7 @@ public class QrActivity extends AppCompatActivity {
         setContentView(R.layout.activity_qr);
         String json = RecordsActivity.Info.CreateJSON();
         qrImage = findViewById(R.id.qrImageView);
-        qrgEncoder = new QRGEncoder(json, null, QRGContents.Type.TEXT, 200);
+        qrgEncoder = new QRGEncoder(json, null, QRGContents.Type.TEXT, 300);
         try {
             // Getting QR-Code as Bitmap
             qrgEncoder.setColorBlack(this.getResources().getColor(R.color.darkGrey));
