@@ -24,10 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="backAuto"
         android:text="Back"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,99 +38,47 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="toStage"
         android:text="Next"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/teleNotesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:text="Notes"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/teleNotesCountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/teleNotesIncrementButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:onClick="teleIncrementNotes"
-        android:text="+"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="@+id/teleNotesCountTextView"
-        app:layout_constraintStart_toEndOf="@+id/teleNotesCountTextView"
-        app:layout_constraintTop_toTopOf="@+id/teleNotesCountTextView" />
-
-    <Button
-        android:id="@+id/teleNotesDecrementButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:onClick="teleDecrementNotes"
-        android:text="-"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="@+id/teleNotesCountTextView"
-        app:layout_constraintEnd_toStartOf="@+id/teleNotesCountTextView"
-        app:layout_constraintTop_toTopOf="@+id/teleNotesCountTextView" />
 
     <TextView
         android:id="@+id/teleAmpNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Amp Notes"
+        android:layout_marginTop="75dp"
+        android:text="Amp"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleNotesCountTextView" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleBackButton"
+        app:layout_constraintStart_toStartOf="@+id/teleBackButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleBackButton" />
 
     <TextView
         android:id="@+id/teleAmpNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleAmpNotesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesTextView" />
 
     <Button
         android:id="@+id/teleAmpNotesIncrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="teleIncrementAmpNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleAmpNotesCountTextView"
@@ -140,11 +88,11 @@
         android:id="@+id/teleAmpNotesDecrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="teleDecrementAmpNotes"
         android:text="-"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleAmpNotesCountTextView"
@@ -154,35 +102,35 @@
         android:id="@+id/teleSpeakerNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Speaker Notes"
+        android:layout_marginTop="75dp"
+        android:text="Speaker"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesCountTextView" />
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleNextButton"
+        app:layout_constraintStart_toStartOf="@+id/teleNextButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleNextButton" />
 
     <TextView
         android:id="@+id/teleSpeakerNotesCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="30dp"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesTextView" />
 
     <Button
         android:id="@+id/teleSpeakerNotesIncrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="teleIncrementSpeakerNotes"
         android:text="+"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleSpeakerNotesCountTextView"
@@ -192,11 +140,11 @@
         android:id="@+id/teleSpeakerNotesDecrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
         android:onClick="teleDecrementSpeakerNotes"
         android:text="-"
         android:textColor="@color/white"
-        android:backgroundTint="@color/yellow"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintEnd_toStartOf="@+id/teleSpeakerNotesCountTextView"
@@ -206,7 +154,7 @@
         android:id="@+id/teleCommentsEditText"
         android:layout_width="500dp"
         android:layout_height="75dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="700dp"
         android:background="@color/grey"
         android:ems="10"
         android:gravity="center"
@@ -215,7 +163,111 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesMissedIncrementButton"
+        app:layout_constraintStart_toStartOf="@+id/teleAmpNotesMissedDecrementButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teleAmpNotesMissedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Missed"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesCountTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleAmpNotesCountTextView"
+        app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesCountTextView" />
+
+    <TextView
+        android:id="@+id/teleSpeakerNotesMissedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Missed"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesCountTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesCountTextView"
         app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesCountTextView" />
+
+    <TextView
+        android:id="@+id/teleAmpNotesMissedCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleAmpNotesMissedTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleAmpNotesMissedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesMissedTextView" />
+
+    <TextView
+        android:id="@+id/teleSpeakerNotesMissedCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesMissedTextView"
+        app:layout_constraintStart_toStartOf="@+id/teleSpeakerNotesMissedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/teleSpeakerNotesMissedTextView" />
+
+    <Button
+        android:id="@+id/teleAmpNotesMissedDecrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="teleDecrementAmpNotesMissed"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesMissedCountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/teleAmpNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/teleAmpNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/teleAmpNotesMissedIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="teleIncrementAmpNotesMissed"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleAmpNotesMissedCountTextView"
+        app:layout_constraintStart_toEndOf="@+id/teleAmpNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/teleAmpNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/teleSpeakerNotesMissedDecrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="teleDecrementSpeakerNotesMissed"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesMissedCountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/teleSpeakerNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/teleSpeakerNotesMissedIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="teleIncrementSpeakerNotesMissed"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesMissedCountTextView"
+        app:layout_constraintStart_toEndOf="@+id/teleSpeakerNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesMissedCountTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

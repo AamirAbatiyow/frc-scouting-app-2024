@@ -11,14 +11,16 @@ public class RecordsActivity {
         public static byte fieldPosition = 0;
         //auto activity
         public static boolean leave = false;
-        public static byte autoNotes = 0;
         public static byte autoAmpNotes = 0;
         public static byte autoSpeakerNotes = 0;
+        public static byte autoAmpNotesMissed = 0;
+        public static byte autoSpeakerNotesMissed = 0;
         public static String autoComments = "";
         //tele activity
-        public static byte teleNotes = 0;
         public static byte teleAmpNotes = 0;
         public static byte teleSpeakerNotes = 0;
+        public static byte teleAmpNotesMissed = 0;
+        public static byte teleSpeakerNotesMissed = 0;
         public static String teleComments = "";
         //stage activity
         public static byte stageLevel = 0;
@@ -27,18 +29,30 @@ public class RecordsActivity {
         public static String stageComments = "";
 
         /**
-         * Turns a boolean into either a 1 or 0 for the JSON file
+         * Turns a boolean into either a yes or no for the JSON file
          *
          * @param checkBox boolean value being passed in from the checkboxes
          *
-         * @return 1 or 0
+         * @return yes or no
          */
-        public static int printBoolean(boolean checkBox) {
+        public static String printBoolean(boolean checkBox) {
             if(checkBox){
-                return 1;
+                return "Yes";
             } else {
-                return 0;
+                return "No";
             }
+        }
+
+        /**
+         * Calculates a percentage to the nearest hundredths place for the JSON file
+         *
+         * @param made number of made notes
+         * @param missed number of missed notes
+         *
+         * @return percentage to the nearest hundredths
+         */
+        public static double getPercentage(byte made, byte missed) {
+            return (double) Math.round(made * 100.0) / (made + missed);
         }
 
         /**
@@ -48,28 +62,34 @@ public class RecordsActivity {
          */
         public static String CreateJSON() {
             //main activity
-            String json = String.format("{\"Name\": \"%s\",",scoutName);
-            json += String.format("\"Match\": \"%s\",",matchNumber);
-            json += String.format("\"Team\": \"%s\",",teamNumber);
-            json += String.format("\"Preload\": \"%d\",",printBoolean(preload));
-            json += String.format("\"Station\": \"%s\",",driverStation);
-            json += String.format("\"Pos\": \"%s\",",fieldPosition);
+            String json = String.format("Scout Name: %s",scoutName);
+            json += String.format("\tMatch Number: %s",matchNumber);
+            json += String.format("\tTeam Number: %s",teamNumber);
+            json += String.format("\tPreload: %s",printBoolean(preload));
+            json += String.format("\tDriver Station: %s",driverStation);
+            json += String.format("\tStarting Position: %s",fieldPosition);
             //auto activity
-            json += String.format("\"Leave\": \"%d\",",printBoolean(leave));
-            json += String.format("\"AutoNote\": \"%s\",",autoNotes);
-            json += String.format("\"AutoAmp\": \"%s\",",autoAmpNotes);
-            json += String.format("\"AutoSpeaker\": \"%s\",",autoSpeakerNotes);
-            json += String.format("\"AutoComment\": \"%s\",",autoComments);
+            json += String.format("\tLeave: %s",printBoolean(leave));
+            json += String.format("\tAutoAmp: %s",autoAmpNotes);
+            json += String.format("\tAutoSpeaker: %s",autoSpeakerNotes);
+            json += String.format("\tAutoAmpMissed: %s",autoAmpNotesMissed);
+            json += String.format("\tAutoSpeakerMissed: %s",autoSpeakerNotesMissed);
+            json += String.format("\tAutoAmpPercentage: %s",getPercentage(autoAmpNotes, autoAmpNotesMissed));
+            json += String.format("\tAutoSpeakerPercentage: %s",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
+            json += String.format("\tAutoComment: %s",autoComments);
             //tele activity
-            json += String.format("\"TeleNote\": \"%s\",",teleNotes);
-            json += String.format("\"TeleAmp\": \"%s\",",teleAmpNotes);
-            json += String.format("\"TeleSpeaker\": \"%s\",",teleSpeakerNotes);
-            json += String.format("\"TeleComment\": \"%s\",",teleComments);
+            json += String.format("\tTeleAmp: %s",teleAmpNotes);
+            json += String.format("\tTeleSpeaker: %s",teleSpeakerNotes);
+            json += String.format("\tTeleAmpMissed: %s",teleAmpNotesMissed);
+            json += String.format("\tTeleSpeakerMissed: %s",teleSpeakerNotesMissed);
+            json += String.format("\tTeleAmpPercentage: %s",getPercentage(teleAmpNotes, teleAmpNotesMissed));
+            json += String.format("\tTeleSpeakerPercentage: %s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
+            json += String.format("\tTeleComment: %s",teleComments);
             //stage activity
-            json += String.format("\"Stage\": \"%s\",",stageLevel);
-            json += String.format("\"Harmony\": \"%s\",",printBoolean(harmony));
-            json += String.format("\"Trap\": \"%s\",",printBoolean(trap));
-            json += String.format("\"StageComment\": \"%s\",}",stageComments);
+            json += String.format("\tStage: %s",stageLevel);
+            json += String.format("\tHarmony: %s",printBoolean(harmony));
+            json += String.format("\tTrap: %s",printBoolean(trap));
+            json += String.format("\tStageComment: %s\n",stageComments);
             return json;
         }
 
@@ -84,14 +104,16 @@ public class RecordsActivity {
             fieldPosition = 0;
             //auto activity
             leave = false;
-            autoNotes = 0;
             autoAmpNotes = 0;
             autoSpeakerNotes = 0;
+            autoAmpNotesMissed = 0;
+            autoSpeakerNotesMissed = 0;
             autoComments = "";
             //tele activity
-            teleNotes = 0;
             teleAmpNotes = 0;
             teleSpeakerNotes = 0;
+            teleAmpNotesMissed = 0;
+            teleSpeakerNotesMissed = 0;
             teleComments = "";
             //stage activity
             stageLevel = 0;
