@@ -81,13 +81,13 @@ public class MainActivity extends AppCompatActivity {
         teamNumber.setText(RecordsActivity.Info.teamNumber);
         preloadCheck.setChecked(RecordsActivity.Info.preload);
         switch (RecordsActivity.Info.driverStation) {
-            case 1:
+            case "Red 1":
                 red1.setChecked(true);
                 break;
-            case 2:
+            case "Red 2":
                 red2.setChecked(true);
                 break;
-            case 3:
+            case "Red 3":
                 red3.setChecked(true);
                 break;
             default:
@@ -125,13 +125,13 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.teamNumber = teamNumber.getText().toString();
         RecordsActivity.Info.preload = preloadCheck.isChecked();
         if(red1.isChecked()){
-            RecordsActivity.Info.driverStation = 1;
+            RecordsActivity.Info.driverStation = "Red 1";
         } else if (red2.isChecked()){
-            RecordsActivity.Info.driverStation = 2;
+            RecordsActivity.Info.driverStation = "Red 2";
         } else if (red3.isChecked()){
-            RecordsActivity.Info.driverStation = 3;
+            RecordsActivity.Info.driverStation = "Red 3";
         } else {
-            RecordsActivity.Info.driverStation = 0;
+            RecordsActivity.Info.driverStation = "";
         }
         switch (checkedPosition){
             case 0:
