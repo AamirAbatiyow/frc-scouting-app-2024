@@ -7,7 +7,7 @@ public class RecordsActivity {
         public static String matchNumber = "";
         public static String teamNumber = "";
         public static boolean preload = false;
-        public static byte driverStation = 0;
+        public static String driverStation = "";
         public static byte fieldPosition = 0;
         //auto activity
         public static boolean leave = false;

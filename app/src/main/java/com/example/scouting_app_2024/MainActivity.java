@@ -12,7 +12,7 @@ import android.widget.RadioButton;
 public class MainActivity extends AppCompatActivity {
     CheckBox preloadCheck;
     EditText scoutName, matchNumber, teamNumber;
-    RadioButton red1, red2, red3, pos1, pos2, pos3, pos4;
+    RadioButton blue1, blue2, blue3, pos1, pos2, pos3, pos4;
     RadioButton[] positions;
     int checkedPosition = -1;
     @Override
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         matchNumber = findViewById(R.id.matchNumberEditText);
         teamNumber = findViewById(R.id.teamNumberEditText);
         preloadCheck = findViewById(R.id.preloadCheckBox);
-        red1 = findViewById(R.id.redOneRadioButton);
-        red2 = findViewById(R.id.redTwoRadioButton);
-        red3 = findViewById(R.id.redThreeRadioButton);
+        blue1 = findViewById(R.id.blueOneRadioButton);
+        blue2 = findViewById(R.id.blueTwoRadioButton);
+        blue3 = findViewById(R.id.blueThreeRadioButton);
         pos1 = findViewById(R.id.fieldPositionOne);
         pos2 = findViewById(R.id.fieldPositionTwo);
         pos3 = findViewById(R.id.fieldPositionThree);
@@ -81,19 +81,19 @@ public class MainActivity extends AppCompatActivity {
         teamNumber.setText(RecordsActivity.Info.teamNumber);
         preloadCheck.setChecked(RecordsActivity.Info.preload);
         switch (RecordsActivity.Info.driverStation) {
-            case 1:
-                red1.setChecked(true);
+            case "Blue 1":
+                blue1.setChecked(true);
                 break;
-            case 2:
-                red2.setChecked(true);
+            case "Blue 2":
+                blue2.setChecked(true);
                 break;
-            case 3:
-                red3.setChecked(true);
+            case "Blue 3":
+                blue3.setChecked(true);
                 break;
             default:
-                red1.setChecked(false);
-                red2.setChecked(false);
-                red3.setChecked(false);
+                blue1.setChecked(false);
+                blue2.setChecked(false);
+                blue3.setChecked(false);
                 break;
         }
 
@@ -124,14 +124,14 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.matchNumber = matchNumber.getText().toString();
         RecordsActivity.Info.teamNumber = teamNumber.getText().toString();
         RecordsActivity.Info.preload = preloadCheck.isChecked();
-        if(red1.isChecked()){
-            RecordsActivity.Info.driverStation = 1;
-        } else if (red2.isChecked()){
-            RecordsActivity.Info.driverStation = 2;
-        } else if (red3.isChecked()){
-            RecordsActivity.Info.driverStation = 3;
+        if(blue1.isChecked()){
+            RecordsActivity.Info.driverStation = "Blue 1";
+        } else if (blue2.isChecked()){
+            RecordsActivity.Info.driverStation = "Blue 2";
+        } else if (blue3.isChecked()){
+            RecordsActivity.Info.driverStation = "Blue 3";
         } else {
-            RecordsActivity.Info.driverStation = 0;
+            RecordsActivity.Info.driverStation = "";
         }
         switch (checkedPosition){
             case 0:
