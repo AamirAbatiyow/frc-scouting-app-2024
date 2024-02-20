@@ -133,11 +133,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="708dp"
-        android:layout_height="216dp"
+        android:id="@+id/fieldImageView"
+        android:layout_width="691dp"
+        android:layout_height="201dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/blueside"
-        tools:layout_editor_absoluteX="-25dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteX="-21dp" />
+
+    <RadioButton
+        android:id="@+id/fieldPositionOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="798dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="763dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="814dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="458dp"
+        tools:layout_editor_absoluteY="764dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
