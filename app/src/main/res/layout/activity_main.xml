@@ -139,37 +139,68 @@
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/blueside"
-        tools:layout_editor_absoluteX="-21dp" />
+        tools:layout_editor_absoluteX="-25dp" />
 
     <RadioButton
         android:id="@+id/fieldPositionOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="798dp" />
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="72dp"
+        android:buttonTint="@color/yellow"
+        android:onClick="clicked"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text=""
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldImageView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/fieldPositionTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="763dp" />
+        android:layout_marginStart="90dp"
+        android:layout_marginBottom="4dp"
+        android:buttonTint="@color/yellow"
+        android:onClick="clicked"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text=""
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/fieldPositionOne"
+        app:layout_constraintStart_toStartOf="@+id/fieldPositionOne" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/fieldPositionThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="814dp" />
+        android:layout_marginStart="136dp"
+        android:buttonTint="@color/yellow"
+        android:onClick="clicked"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text=""
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldPositionOne"
+        app:layout_constraintStart_toEndOf="@+id/fieldPositionOne"
+        app:layout_constraintTop_toTopOf="@+id/fieldPositionOne"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioButton
-        android:id="@+id/radioButton4"
+        android:id="@+id/fieldPositionFour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="458dp"
-        tools:layout_editor_absoluteY="764dp" />
+        android:layout_marginStart="216dp"
+        android:buttonTint="@color/yellow"
+        android:onClick="clicked"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text=""
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldPositionTwo"
+        app:layout_constraintStart_toEndOf="@+id/fieldPositionTwo"
+        app:layout_constraintTop_toTopOf="@+id/fieldPositionTwo"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
