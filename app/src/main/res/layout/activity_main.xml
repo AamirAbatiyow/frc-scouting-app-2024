@@ -119,77 +119,6 @@
         app:layout_constraintStart_toEndOf="@+id/matchNumberEditText"
         app:layout_constraintTop_toTopOf="@+id/scoutNameEditText" />
 
-    <ImageView
-        android:id="@+id/fieldImageView"
-        android:layout_width="680dp"
-        android:layout_height="213dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/redside" />
-
-    <RadioButton
-        android:id="@+id/fieldPositionOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
-        android:buttonTint="@color/yellow"
-        android:onClick="clicked"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text=""
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fieldImageView"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <RadioButton
-        android:id="@+id/fieldPositionTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="16dp"
-        android:buttonTint="@color/yellow"
-        android:onClick="clicked"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text=""
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/fieldPositionOne"
-        app:layout_constraintEnd_toStartOf="@+id/fieldPositionOne" />
-
-    <RadioButton
-        android:id="@+id/fieldPositionThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="180dp"
-        android:buttonTint="@color/yellow"
-        android:onClick="clicked"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text=""
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fieldPositionOne"
-        app:layout_constraintEnd_toStartOf="@+id/fieldPositionOne"
-        app:layout_constraintTop_toTopOf="@+id/fieldPositionOne"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <RadioButton
-        android:id="@+id/fieldPositionFour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="220dp"
-        android:onClick="clicked"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text=""
-        android:buttonTint="@color/yellow"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fieldPositionTwo"
-        app:layout_constraintEnd_toStartOf="@+id/fieldPositionTwo"
-        app:layout_constraintTop_toTopOf="@+id/fieldPositionTwo"
-        app:layout_constraintVertical_bias="0.0" />
-
     <CheckBox
         android:id="@+id/preloadCheckBox"
         android:layout_width="wrap_content"
@@ -202,5 +131,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="708dp"
+        android:layout_height="216dp"
+        app:srcCompat="@drawable/blueside"
+        tools:layout_editor_absoluteX="-25dp"
+        tools:layout_editor_absoluteY="679dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
