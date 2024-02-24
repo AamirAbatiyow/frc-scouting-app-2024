@@ -70,18 +70,18 @@ public class RecordsActivity {
             //auto activity
             json += String.format("\t%s",printBoolean(leave));
             json += String.format("\t%s",autoAmpNotes);
-            json += String.format("\t%s",autoSpeakerNotes);
             json += String.format("\t%s",autoAmpNotesMissed);
-            json += String.format("\t%s",autoSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(autoAmpNotes, autoAmpNotesMissed));
+            json += String.format("\t%s",autoSpeakerNotes);
+            json += String.format("\t%s",autoSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
             json += String.format("\t%s",autoComments);
             //tele activity
             json += String.format("\t%s",teleAmpNotes);
-            json += String.format("\t%s",teleSpeakerNotes);
             json += String.format("\t%s",teleAmpNotesMissed);
-            json += String.format("\t%s",teleSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(teleAmpNotes, teleAmpNotesMissed));
+            json += String.format("\t%s",teleSpeakerNotes);
+            json += String.format("\t%s",teleSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
             json += String.format("\t%s",teleComments);
             //stage activity
