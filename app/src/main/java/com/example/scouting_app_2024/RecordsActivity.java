@@ -62,34 +62,34 @@ public class RecordsActivity {
          */
         public static String CreateJSON() {
             //main activity
-            String json = String.format("Scout Name: %s",scoutName);
-            json += String.format("\tMatch Number: %s",matchNumber);
-            json += String.format("\tTeam Number: %s",teamNumber);
-            json += String.format("\tPreload: %s",printBoolean(preload));
-            json += String.format("\tDriver Station: %s",driverStation);
-            json += String.format("\tStarting Position: %s",fieldPosition);
+            String json = String.format("%s",matchNumber);
+            json += String.format("\t%s",teamNumber);
+            json += String.format("\t%s",printBoolean(preload));
+            json += String.format("\t%s",driverStation);
+            json += String.format("\t%s",fieldPosition);
             //auto activity
-            json += String.format("\tLeave: %s",printBoolean(leave));
-            json += String.format("\tAutoAmp: %s",autoAmpNotes);
-            json += String.format("\tAutoSpeaker: %s",autoSpeakerNotes);
-            json += String.format("\tAutoAmpMissed: %s",autoAmpNotesMissed);
-            json += String.format("\tAutoSpeakerMissed: %s",autoSpeakerNotesMissed);
-            json += String.format("\tAutoAmpPercentage: %s",getPercentage(autoAmpNotes, autoAmpNotesMissed));
-            json += String.format("\tAutoSpeakerPercentage: %s",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
-            json += String.format("\tAutoComment: %s",autoComments);
+            json += String.format("\t%s",printBoolean(leave));
+            json += String.format("\t%s",autoAmpNotes);
+            json += String.format("\t%s",autoSpeakerNotes);
+            json += String.format("\t%s",autoAmpNotesMissed);
+            json += String.format("\t%s",autoSpeakerNotesMissed);
+            json += String.format("\t%s",getPercentage(autoAmpNotes, autoAmpNotesMissed));
+            json += String.format("\t%s",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
+            json += String.format("\t%s",autoComments);
             //tele activity
-            json += String.format("\tTeleAmp: %s",teleAmpNotes);
-            json += String.format("\tTeleSpeaker: %s",teleSpeakerNotes);
-            json += String.format("\tTeleAmpMissed: %s",teleAmpNotesMissed);
-            json += String.format("\tTeleSpeakerMissed: %s",teleSpeakerNotesMissed);
-            json += String.format("\tTeleAmpPercentage: %s",getPercentage(teleAmpNotes, teleAmpNotesMissed));
-            json += String.format("\tTeleSpeakerPercentage: %s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
-            json += String.format("\tTeleComment: %s",teleComments);
+            json += String.format("\t%s",teleAmpNotes);
+            json += String.format("\t%s",teleSpeakerNotes);
+            json += String.format("\t%s",teleAmpNotesMissed);
+            json += String.format("\t%s",teleSpeakerNotesMissed);
+            json += String.format("\t%s",getPercentage(teleAmpNotes, teleAmpNotesMissed));
+            json += String.format("\t%s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
+            json += String.format("\t%s",teleComments);
             //stage activity
-            json += String.format("\tStage: %s",stageLevel);
-            json += String.format("\tHarmony: %s",printBoolean(harmony));
-            json += String.format("\tTrap: %s",printBoolean(trap));
-            json += String.format("\tStageComment: %s\n",stageComments);
+            json += String.format("\t%s",stageLevel);
+            json += String.format("\t%s",printBoolean(harmony));
+            json += String.format("\t%s",printBoolean(trap));
+            json += String.format("\t%s",stageComments);
+            json += String.format("\t%s",scoutName);
             return json;
         }
 
