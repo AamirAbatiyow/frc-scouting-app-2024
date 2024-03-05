@@ -68,10 +68,10 @@
             android:id="@+id/driverStationTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Driver Station"
-            android:textColor="@color/white"
             android:background="@color/yellow"
             android:gravity="center"
+            android:text="Driver Station"
+            android:textColor="@color/white"
             android:textSize="60sp" />
 
         <RadioButton
