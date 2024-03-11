@@ -11,15 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StageActivity extends AppCompatActivity {
     CheckBox harmonyCheck, trapCheck;
-    RadioButton park, onstage, spotlit;
+    RadioButton noPark, park, onstage, spotlit;
     EditText stageComments;
-    //Cannot deselect parking options in endgame
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stage);
         harmonyCheck = findViewById(R.id.harmonyCheckBox);
         trapCheck = findViewById(R.id.trapCheckBox);
+        noPark = findViewById(R.id.noParkRadioButton);
         park = findViewById(R.id.parkRadioButton);
         onstage = findViewById(R.id.onstageRadioButton);
         spotlit = findViewById(R.id.spotlitRadioButton);
@@ -56,6 +57,9 @@ public class StageActivity extends AppCompatActivity {
         harmonyCheck.setChecked(RecordsActivity.Info.harmony);
         trapCheck.setChecked(RecordsActivity.Info.trap);
         switch (RecordsActivity.Info.stageLevel) {
+            case 0:
+                noPark.setChecked(true);
+                break;
             case 1:
                 park.setChecked(true);
                 break;
@@ -66,6 +70,7 @@ public class StageActivity extends AppCompatActivity {
                 spotlit.setChecked(true);
                 break;
             default:
+                noPark.setChecked(false);
                 park.setChecked(false);
                 onstage.setChecked(false);
                 spotlit.setChecked(false);
@@ -77,10 +82,12 @@ public class StageActivity extends AppCompatActivity {
     /**
      * Stores all current data in RecordsActivity
      */
-    public void saveData(){
+    public void saveData() {
         RecordsActivity.Info.harmony = harmonyCheck.isChecked();
         RecordsActivity.Info.trap = trapCheck.isChecked();
-        if(park.isChecked()){
+        if(noPark.isChecked()){
+            RecordsActivity.Info.stageLevel = 0;
+        } else if(park.isChecked()){
             RecordsActivity.Info.stageLevel = 1;
         } else if (onstage.isChecked()){
             RecordsActivity.Info.stageLevel = 2;
