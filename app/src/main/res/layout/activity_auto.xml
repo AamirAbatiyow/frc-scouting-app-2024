@@ -51,7 +51,7 @@
         android:id="@+id/autoAmpNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         android:text="Amp"
         android:textColor="@color/white"
         android:textSize="60sp"
@@ -103,7 +103,7 @@
         android:id="@+id/autoSpeakerNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         android:text="Speaker"
         android:textColor="@color/white"
         android:textSize="60sp"
@@ -155,7 +155,7 @@
         android:id="@+id/autoCommentsEditText"
         android:layout_width="500dp"
         android:layout_height="75dp"
-        android:layout_marginTop="700dp"
+        android:layout_marginTop="800dp"
         android:background="@color/grey"
         android:ems="10"
         android:gravity="center"
@@ -184,7 +184,7 @@
         android:id="@+id/autoAmpNotesMissedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:text="Missed"
         android:textColor="@color/white"
         android:textSize="60sp"
@@ -236,7 +236,7 @@
         android:id="@+id/autoSpeakerNotesMissedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:text="Missed"
         android:textColor="@color/white"
         android:textSize="60sp"
@@ -283,5 +283,57 @@
         app:layout_constraintBottom_toBottomOf="@+id/autoSpeakerNotesMissedCountTextView"
         app:layout_constraintStart_toEndOf="@+id/autoSpeakerNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/autoSpeakerNotesMissedCountTextView" />
+
+    <TextView
+        android:id="@+id/autoNotesMissedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="604dp"
+        android:text="Notes Missed"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autoNotesMissedCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/autoCommentsEditText"
+        app:layout_constraintEnd_toEndOf="@+id/autoNotesMissedTextView"
+        app:layout_constraintStart_toStartOf="@+id/autoNotesMissedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/autoNotesMissedTextView" />
+
+    <Button
+        android:id="@+id/autoNotesMissedIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoIncrementNotesMissed"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoNotesMissedCountTextView"
+        app:layout_constraintStart_toEndOf="@+id/autoNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoNotesMissedCountTextView" />
+
+    <Button
+        android:id="@+id/autoNotesMissedDecrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/yellow"
+        android:onClick="autoDecrementNotesMissed"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autoNotesMissedCountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/autoNotesMissedCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoNotesMissedCountTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
