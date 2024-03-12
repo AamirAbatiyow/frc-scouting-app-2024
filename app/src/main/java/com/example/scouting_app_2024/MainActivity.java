@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-//for some reason when you switch between pages more than once the position resets
 public class MainActivity extends AppCompatActivity {
     CheckBox preloadCheck;
     EditText scoutName, matchNumber, teamNumber;
-    RadioButton blue1, blue2, blue3, pos1, pos2, pos3, pos4;
+    RadioButton red1, red2, red3, pos1, pos2, pos3, pos4;
     RadioButton[] positions;
     int checkedPosition = -1;
+    int[] teamList = {935, 937, 1710, 1723, 1730, 1763, 1764, 1769, 1775, 1827, 1847, 1986, 1987, 1994, 2345, 2357, 2410, 2457, 2470, 2560, 3061, 3184, 4809, 4959, 5098, 5119, 5126, 5141, 5189, 5268, 5801, 7421, 8719, 8825, 9445, 9551};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         matchNumber = findViewById(R.id.matchNumberEditText);
         teamNumber = findViewById(R.id.teamNumberEditText);
         preloadCheck = findViewById(R.id.preloadCheckBox);
-        blue1 = findViewById(R.id.blueOneRadioButton);
-        blue2 = findViewById(R.id.blueTwoRadioButton);
-        blue3 = findViewById(R.id.blueThreeRadioButton);
+        red1 = findViewById(R.id.redOneRadioButton);
+        red2 = findViewById(R.id.redTwoRadioButton);
+        red3 = findViewById(R.id.redThreeRadioButton);
         pos1 = findViewById(R.id.fieldPositionOne);
         pos2 = findViewById(R.id.fieldPositionTwo);
         pos3 = findViewById(R.id.fieldPositionThree);
@@ -40,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void toAuto(View view){
-        Intent next = new Intent(this, AutoActivity.class);
-        startActivity(next);
-        saveData();
+        if (checkTeams(Integer.decode(teamNumber.getText().toString()))){
+            Intent next = new Intent(this, AutoActivity.class);
+            startActivity(next);
+            saveData();
+        }
     }
 
     /**
@@ -81,19 +83,19 @@ public class MainActivity extends AppCompatActivity {
         teamNumber.setText(RecordsActivity.Info.teamNumber);
         preloadCheck.setChecked(RecordsActivity.Info.preload);
         switch (RecordsActivity.Info.driverStation) {
-            case "Blue 1":
-                blue1.setChecked(true);
+            case "Red 1":
+                red1.setChecked(true);
                 break;
-            case "Blue 2":
-                blue2.setChecked(true);
+            case "Red 2":
+                red2.setChecked(true);
                 break;
-            case "Blue 3":
-                blue3.setChecked(true);
+            case "Red 3":
+                red3.setChecked(true);
                 break;
             default:
-                blue1.setChecked(false);
-                blue2.setChecked(false);
-                blue3.setChecked(false);
+                red1.setChecked(false);
+                red2.setChecked(false);
+                red3.setChecked(false);
                 break;
         }
 
@@ -124,12 +126,12 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.matchNumber = matchNumber.getText().toString();
         RecordsActivity.Info.teamNumber = teamNumber.getText().toString();
         RecordsActivity.Info.preload = preloadCheck.isChecked();
-        if(blue1.isChecked()){
-            RecordsActivity.Info.driverStation = "Blue 1";
-        } else if (blue2.isChecked()){
-            RecordsActivity.Info.driverStation = "Blue 2";
-        } else if (blue3.isChecked()){
-            RecordsActivity.Info.driverStation = "Blue 3";
+        if(red1.isChecked()){
+            RecordsActivity.Info.driverStation = "Red 1";
+        } else if (red2.isChecked()){
+            RecordsActivity.Info.driverStation = "Red 2";
+        } else if (red3.isChecked()){
+            RecordsActivity.Info.driverStation = "Red 3";
         } else {
             RecordsActivity.Info.driverStation = "";
         }
@@ -151,5 +153,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+
+
+    public boolean checkTeams(int num) {
+        for (int i = 0; i < teamList.length; i++){
+            if (teamList[i] == num){
+                return true;
+            }
+        }
+        return false;
     }
 }
