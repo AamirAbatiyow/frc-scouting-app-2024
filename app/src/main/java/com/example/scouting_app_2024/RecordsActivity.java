@@ -16,6 +16,7 @@ public class RecordsActivity {
         public static byte autoAmpNotesMissed = 0;
         public static byte autoSpeakerNotesMissed = 0;
         public static String autoComments = "";
+        public static byte autoNotesMissed = 0;
         //tele activity
         public static byte teleAmpNotes = 0;
         public static byte teleSpeakerNotes = 0;
@@ -68,6 +69,7 @@ public class RecordsActivity {
             json += String.format("\t%s",driverStation);
             json += String.format("\t%s",fieldPosition);
             //auto activity
+            json += String.format("\t%s",autoNotesMissed);
             json += String.format("\t%s",printBoolean(leave));
             json += String.format("\t%s",autoAmpNotes);
             json += String.format("\t%s",autoAmpNotesMissed);
@@ -103,6 +105,7 @@ public class RecordsActivity {
             preload = false;
             fieldPosition = 0;
             //auto activity
+            autoNotesMissed = 0;
             leave = false;
             autoAmpNotes = 0;
             autoSpeakerNotes = 0;

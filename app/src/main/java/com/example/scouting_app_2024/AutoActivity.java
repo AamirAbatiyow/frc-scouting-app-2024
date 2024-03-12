@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AutoActivity extends AppCompatActivity {
     CheckBox leaveCheck;
-    TextView autoAmpNotesCountText, autoSpeakerNotesCountText, autoAmpNotesMissedCountText, autoSpeakerNotesMissedCountText;
-    byte autoAmpNotesCount, autoSpeakerNotesCount, autoAmpNotesMissedCount, autoSpeakerNotesMissedCount;
+    TextView autoAmpNotesCountText, autoSpeakerNotesCountText, autoAmpNotesMissedCountText, autoSpeakerNotesMissedCountText, autoNotesMissedCountText;
+    byte autoAmpNotesCount, autoSpeakerNotesCount, autoAmpNotesMissedCount, autoSpeakerNotesMissedCount, autoNotesMissedCount;
     EditText autoComments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class AutoActivity extends AppCompatActivity {
         autoSpeakerNotesCountText = findViewById(R.id.autoSpeakerNotesCountTextView);
         autoAmpNotesMissedCountText = findViewById(R.id.autoAmpNotesMissedCountTextView);
         autoSpeakerNotesMissedCountText = findViewById(R.id.autoSpeakerNotesMissedCountTextView);
+        autoNotesMissedCountText = findViewById(R.id.autoNotesMissedCountTextView);
         autoComments = findViewById(R.id.autoCommentsEditText);
         setPrevious();
     }
@@ -151,6 +152,8 @@ public class AutoActivity extends AppCompatActivity {
         autoSpeakerNotesMissedCount = RecordsActivity.Info.autoSpeakerNotesMissed;
         autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
         autoComments.setText(RecordsActivity.Info.autoComments);
+        autoNotesMissedCount = RecordsActivity.Info.autoNotesMissed;
+        autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
     }
 
     /**
@@ -161,7 +164,30 @@ public class AutoActivity extends AppCompatActivity {
         RecordsActivity.Info.autoAmpNotes = autoAmpNotesCount;
         RecordsActivity.Info.autoSpeakerNotes = autoSpeakerNotesCount;
         RecordsActivity.Info.autoAmpNotesMissed = autoAmpNotesMissedCount;
+        RecordsActivity.Info.autoNotesMissed = autoNotesMissedCount;
         RecordsActivity.Info.autoSpeakerNotesMissed = autoSpeakerNotesMissedCount;
         RecordsActivity.Info.autoComments = autoComments.getText().toString();
+    }
+
+    /**
+     * Increments the notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoIncrementNotesMissed(View view){
+        autoNotesMissedCount++;
+        autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
+    }
+
+    /**
+     * Decrements the notes missed count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void autoDecrementNotesMissed(View view){
+        if (autoNotesMissedCount != 0) {
+            autoNotesMissedCount--;
+            autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
+        }
     }
 }
