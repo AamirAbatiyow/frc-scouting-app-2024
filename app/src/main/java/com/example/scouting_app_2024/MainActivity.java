@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton red1, red2, red3, pos1, pos2, pos3, pos4;
     RadioButton[] positions;
     int checkedPosition = -1;
+    int[] teamList = {935, 937, 1710, 1723, 1730, 1763, 1764, 1769, 1775, 1827, 1847, 1986, 1987, 1994, 2345, 2357, 2410, 2457, 2470, 2560, 3061, 3184, 4809, 4959, 5098, 5119, 5126, 5141, 5189, 5268, 5801, 7421, 8719, 8825, 9445, 9551};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
     public void toAuto(View view){
-        Intent next = new Intent(this, AutoActivity.class);
-        startActivity(next);
-        saveData();
+        if (checkTeams(Integer.decode(teamNumber.getText().toString()))){
+            Intent next = new Intent(this, AutoActivity.class);
+            startActivity(next);
+            saveData();
+        }
     }
 
     /**
@@ -151,5 +154,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+
+
+    public boolean checkTeams(int num) {
+     for (int i = 0; i < teamList.length; i++){
+         if (teamList[i] == num){
+             return true;
+         }
+        }
+     return false;
     }
 }
