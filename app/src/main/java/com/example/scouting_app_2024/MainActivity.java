@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-//for some reason when you switch between pages more than once the position resets
 public class MainActivity extends AppCompatActivity {
     CheckBox preloadCheck;
     EditText scoutName, matchNumber, teamNumber;
