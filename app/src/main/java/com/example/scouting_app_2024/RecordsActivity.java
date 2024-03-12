@@ -10,6 +10,7 @@ public class RecordsActivity {
         public static String driverStation = "";
         public static byte fieldPosition = 0;
         //auto activity
+        public static byte autoNotesMissed = 0;
         public static boolean leave = false;
         public static byte autoAmpNotes = 0;
         public static byte autoSpeakerNotes = 0;
@@ -22,6 +23,7 @@ public class RecordsActivity {
         public static byte teleAmpNotesMissed = 0;
         public static byte teleSpeakerNotesMissed = 0;
         public static String teleComments = "";
+        public static byte cycles = 0;
         //stage activity
         public static byte stageLevel = 0;
         public static boolean harmony = false;
@@ -61,6 +63,7 @@ public class RecordsActivity {
          * @return full JSON file with all of the values
          */
         public static String CreateJSON() {
+            cycles = (byte)(teleAmpNotes+teleAmpNotesMissed+teleSpeakerNotes+teleSpeakerNotesMissed);
             //main activity
             String json = String.format("%s",matchNumber);
             json += String.format("\t%s",teamNumber);
@@ -68,6 +71,7 @@ public class RecordsActivity {
             json += String.format("\t%s",driverStation);
             json += String.format("\t%s",fieldPosition);
             //auto activity
+            json += String.format("\t%s",autoNotesMissed);
             json += String.format("\t%s",printBoolean(leave));
             json += String.format("\t%s",autoAmpNotes);
             json += String.format("\t%s",autoAmpNotesMissed);
@@ -84,6 +88,7 @@ public class RecordsActivity {
             json += String.format("\t%s",teleSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
             json += String.format("\t%s",teleComments);
+            json += String.format("\t%s",cycles);
             //stage activity
             json += String.format("\t%s",stageLevel);
             json += String.format("\t%s",printBoolean(harmony));
@@ -103,6 +108,7 @@ public class RecordsActivity {
             preload = false;
             fieldPosition = 0;
             //auto activity
+            autoNotesMissed = 0;
             leave = false;
             autoAmpNotes = 0;
             autoSpeakerNotes = 0;
@@ -115,6 +121,7 @@ public class RecordsActivity {
             teleAmpNotesMissed = 0;
             teleSpeakerNotesMissed = 0;
             teleComments = "";
+            cycles = 0;
             //stage activity
             stageLevel = 0;
             harmony = false;
