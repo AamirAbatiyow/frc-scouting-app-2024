@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         matchNumber = findViewById(R.id.matchNumberEditText);
         teamNumber = findViewById(R.id.teamNumberEditText);
         preloadCheck = findViewById(R.id.preloadCheckBox);
-        red1 = findViewById(R.id.redOneRadioButton);
-        red2 = findViewById(R.id.redTwoRadioButton);
-        red3 = findViewById(R.id.redThreeRadioButton);
+        red1 = findViewById(R.id.blueOneRadioButton);
+        red2 = findViewById(R.id.blueTwoRadioButton);
+        red3 = findViewById(R.id.blueThreeRadioButton);
         pos1 = findViewById(R.id.fieldPositionOne);
         pos2 = findViewById(R.id.fieldPositionTwo);
         pos3 = findViewById(R.id.fieldPositionThree);
