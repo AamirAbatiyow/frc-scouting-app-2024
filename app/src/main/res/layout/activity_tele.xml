@@ -50,11 +50,12 @@
         android:id="@+id/teleAmpNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="25dp"
         android:text="Amp"
         android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="@+id/teleBackButton"
+        app:layout_constraintHorizontal_bias=".955"
         app:layout_constraintStart_toStartOf="@+id/teleBackButton"
         app:layout_constraintTop_toBottomOf="@+id/teleBackButton" />
 
@@ -102,11 +103,12 @@
         android:id="@+id/teleSpeakerNotesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="25dp"
         android:text="Speaker"
         android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="@+id/teleNextButton"
+        app:layout_constraintHorizontal_bias="1.05"
         app:layout_constraintStart_toStartOf="@+id/teleNextButton"
         app:layout_constraintTop_toBottomOf="@+id/teleNextButton" />
 
@@ -158,11 +160,11 @@
         android:background="@color/grey"
         android:ems="10"
         android:gravity="center"
-        android:hint="Comments (died, defense, tipped over, got in the way of teammates, etc)"
+        android:hint="Comments (struggled to pick up, tipped over, got in the way of teammates, etc)"
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="14sp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/teleSpeakerNotesMissedIncrementButton"
         app:layout_constraintStart_toStartOf="@+id/teleAmpNotesMissedDecrementButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -270,4 +272,43 @@
         app:layout_constraintBottom_toBottomOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintStart_toEndOf="@+id/teleSpeakerNotesMissedCountTextView"
         app:layout_constraintTop_toTopOf="@+id/teleSpeakerNotesMissedCountTextView" />
+
+    <CheckBox
+        android:id="@+id/diedCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="44dp"
+        android:buttonTint="@color/yellow"
+        android:text="Died"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleAmpNotesMissedDecrementButton" />
+
+    <CheckBox
+        android:id="@+id/brokeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:buttonTint="@color/yellow"
+        android:text="Broke"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/diedCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/diedCheckBox" />
+
+    <CheckBox
+        android:id="@+id/defenseCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:buttonTint="@color/yellow"
+        android:text="Defense"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/brokeCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/brokeCheckBox" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
