@@ -29,6 +29,28 @@ public class AutoActivity extends AppCompatActivity {
     }
 
     /**
+     * Moves the xml/page back to main
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void backMain(View view){
+        Intent next = new Intent(this, MainActivity.class);
+        startActivity(next);
+        saveData();
+    }
+
+    /**
+     * Moves the xml/page to tele
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void toTele(View view){
+        Intent next = new Intent(this, TeleActivity.class);
+        startActivity(next);
+        saveData();
+    }
+
+    /**
      * Increments the amp notes count and updates the text
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
@@ -117,59 +139,6 @@ public class AutoActivity extends AppCompatActivity {
     }
 
     /**
-     * Moves the xml/page back to main
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void backMain(View view){
-        Intent next = new Intent(this, MainActivity.class);
-        startActivity(next);
-        saveData();
-    }
-
-    /**
-     * Moves the xml/page to tele
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void toTele(View view){
-        Intent next = new Intent(this, TeleActivity.class);
-        startActivity(next);
-        saveData();
-    }
-
-    /**
-     * Sets all values to the ones in RecordsActivity so pages don't change whenever you switch between them
-     */
-    public void setPrevious(){
-        leaveCheck.setChecked(RecordsActivity.Info.leave);
-        autoAmpNotesCount = RecordsActivity.Info.autoAmpNotes;
-        autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
-        autoSpeakerNotesCount = RecordsActivity.Info.autoSpeakerNotes;
-        autoSpeakerNotesCountText.setText(String.valueOf(autoSpeakerNotesCount));
-        autoAmpNotesMissedCount = RecordsActivity.Info.autoAmpNotesMissed;
-        autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
-        autoSpeakerNotesMissedCount = RecordsActivity.Info.autoSpeakerNotesMissed;
-        autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
-        autoComments.setText(RecordsActivity.Info.autoComments);
-        autoNotesMissedCount = RecordsActivity.Info.autoNotesMissed;
-        autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
-    }
-
-    /**
-     * Stores all current data in RecordsActivity
-     */
-    public void saveData(){
-        RecordsActivity.Info.leave = leaveCheck.isChecked();
-        RecordsActivity.Info.autoAmpNotes = autoAmpNotesCount;
-        RecordsActivity.Info.autoSpeakerNotes = autoSpeakerNotesCount;
-        RecordsActivity.Info.autoAmpNotesMissed = autoAmpNotesMissedCount;
-        RecordsActivity.Info.autoNotesMissed = autoNotesMissedCount;
-        RecordsActivity.Info.autoSpeakerNotesMissed = autoSpeakerNotesMissedCount;
-        RecordsActivity.Info.autoComments = autoComments.getText().toString();
-    }
-
-    /**
      * Increments the notes missed count and updates the text
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
@@ -189,5 +158,36 @@ public class AutoActivity extends AppCompatActivity {
             autoNotesMissedCount--;
             autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
         }
+    }
+
+    /**
+     * Sets all values to the ones in RecordsActivity so pages don't change whenever you switch between them
+     */
+    public void setPrevious(){
+        leaveCheck.setChecked(RecordsActivity.Info.leave);
+        autoAmpNotesCount = RecordsActivity.Info.autoAmpNotes;
+        autoAmpNotesCountText.setText(String.valueOf(autoAmpNotesCount));
+        autoSpeakerNotesCount = RecordsActivity.Info.autoSpeakerNotes;
+        autoSpeakerNotesCountText.setText(String.valueOf(autoSpeakerNotesCount));
+        autoAmpNotesMissedCount = RecordsActivity.Info.autoAmpNotesMissed;
+        autoAmpNotesMissedCountText.setText(String.valueOf(autoAmpNotesMissedCount));
+        autoSpeakerNotesMissedCount = RecordsActivity.Info.autoSpeakerNotesMissed;
+        autoSpeakerNotesMissedCountText.setText(String.valueOf(autoSpeakerNotesMissedCount));
+        autoNotesMissedCount = RecordsActivity.Info.autoNotesMissed;
+        autoNotesMissedCountText.setText(String.valueOf(autoNotesMissedCount));
+        autoComments.setText(RecordsActivity.Info.autoComments);
+    }
+
+    /**
+     * Stores all current data in RecordsActivity
+     */
+    public void saveData(){
+        RecordsActivity.Info.leave = leaveCheck.isChecked();
+        RecordsActivity.Info.autoAmpNotes = autoAmpNotesCount;
+        RecordsActivity.Info.autoSpeakerNotes = autoSpeakerNotesCount;
+        RecordsActivity.Info.autoAmpNotesMissed = autoAmpNotesMissedCount;
+        RecordsActivity.Info.autoSpeakerNotesMissed = autoSpeakerNotesMissedCount;
+        RecordsActivity.Info.autoNotesMissed = autoNotesMissedCount;
+        RecordsActivity.Info.autoComments = autoComments.getText().toString();
     }
 }

@@ -57,16 +57,16 @@ public class StageActivity extends AppCompatActivity {
         harmonyCheck.setChecked(RecordsActivity.Info.harmony);
         trapCheck.setChecked(RecordsActivity.Info.trap);
         switch (RecordsActivity.Info.stageLevel) {
-            case 0:
+            case "No Park":
                 noPark.setChecked(true);
                 break;
-            case 1:
+            case "Parked":
                 park.setChecked(true);
                 break;
-            case 2:
+            case "Onstage":
                 onstage.setChecked(true);
                 break;
-            case 3:
+            case "Spotlit":
                 spotlit.setChecked(true);
                 break;
             default:
@@ -86,15 +86,15 @@ public class StageActivity extends AppCompatActivity {
         RecordsActivity.Info.harmony = harmonyCheck.isChecked();
         RecordsActivity.Info.trap = trapCheck.isChecked();
         if(noPark.isChecked()){
-            RecordsActivity.Info.stageLevel = 0;
+            RecordsActivity.Info.stageLevel = "No Park";
         } else if(park.isChecked()){
-            RecordsActivity.Info.stageLevel = 1;
+            RecordsActivity.Info.stageLevel = "Parked";
         } else if (onstage.isChecked()){
-            RecordsActivity.Info.stageLevel = 2;
+            RecordsActivity.Info.stageLevel = "Onstage";
         } else if (spotlit.isChecked()){
-            RecordsActivity.Info.stageLevel = 3;
+            RecordsActivity.Info.stageLevel = "Spotlit";
         } else {
-            RecordsActivity.Info.stageLevel = 0;
+            RecordsActivity.Info.stageLevel = "null";
         }
         RecordsActivity.Info.stageComments = stageComments.getText().toString();
     }

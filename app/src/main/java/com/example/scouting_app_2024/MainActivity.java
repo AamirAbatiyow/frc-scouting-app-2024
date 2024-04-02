@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Moves the xml/page to auto
+     * Moves the xml/page to auto as long as the team number is a valid team number
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
@@ -45,6 +45,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(next);
             saveData();
         }
+    }
+
+    /**
+     * Checks the entered team number in the team list to see if the team is a valid team
+     *
+     * @param teamNum team number entered by scout
+     *
+     * @return true or false
+     */
+    public boolean checkTeams(int teamNum) {
+        for (int i = 0; i < teamList.length; i++){
+            if (teamList[i] == teamNum){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -82,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         matchNumber.setText(RecordsActivity.Info.matchNumber);
         teamNumber.setText(RecordsActivity.Info.teamNumber);
         preloadCheck.setChecked(RecordsActivity.Info.preload);
+
         switch (RecordsActivity.Info.driverStation) {
             case "Red 1":
                 red1.setChecked(true);
@@ -126,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.matchNumber = matchNumber.getText().toString();
         RecordsActivity.Info.teamNumber = teamNumber.getText().toString();
         RecordsActivity.Info.preload = preloadCheck.isChecked();
+
         if(red1.isChecked()){
             RecordsActivity.Info.driverStation = "Red 1";
         } else if (red2.isChecked()){
@@ -135,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             RecordsActivity.Info.driverStation = "";
         }
+
         switch (checkedPosition){
             case 0:
                 RecordsActivity.Info.fieldPosition = 1;
@@ -153,16 +172,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-    }
-
-
-
-    public boolean checkTeams(int num) {
-     for (int i = 0; i < teamList.length; i++){
-         if (teamList[i] == num){
-             return true;
-         }
-        }
-     return false;
     }
 }

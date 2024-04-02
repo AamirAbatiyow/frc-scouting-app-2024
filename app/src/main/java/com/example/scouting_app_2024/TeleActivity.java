@@ -1,7 +1,6 @@
 package com.example.scouting_app_2024;
 
 import android.content.Intent;
-import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TeleActivity extends AppCompatActivity {
     TextView teleAmpNotesCountText, teleSpeakerNotesCountText, teleAmpNotesMissedCountText, teleSpeakerNotesMissedCountText;
     byte teleAmpNotesCount, teleSpeakerNotesCount, teleAmpNotesMissedCount, teleSpeakerNotesMissedCount;
+    CheckBox diedCheck, brokeCheck, defenseCheck;
     EditText teleComments;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -22,8 +22,33 @@ public class TeleActivity extends AppCompatActivity {
         teleSpeakerNotesCountText = findViewById(R.id.teleSpeakerNotesCountTextView);
         teleAmpNotesMissedCountText = findViewById(R.id.teleAmpNotesMissedCountTextView);
         teleSpeakerNotesMissedCountText = findViewById(R.id.teleSpeakerNotesMissedCountTextView);
+        diedCheck = findViewById(R.id.diedCheckBox);
+        brokeCheck = findViewById(R.id.brokeCheckBox);
+        defenseCheck = findViewById(R.id.defenseCheckBox);
         teleComments = findViewById(R.id.teleCommentsEditText);
         setPrevious();
+    }
+
+    /**
+     * Moves the xml/page back to auto
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void backAuto(View view){
+        Intent next = new Intent(this, AutoActivity.class);
+        startActivity(next);
+        saveData();
+    }
+
+    /**
+     * Moves the xml/page to stage
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void toStage(View view){
+        Intent next = new Intent(this, StageActivity.class);
+        startActivity(next);
+        saveData();
     }
 
     /**
@@ -115,28 +140,6 @@ public class TeleActivity extends AppCompatActivity {
     }
 
     /**
-     * Moves the xml/page back to auto
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void backAuto(View view){
-        Intent next = new Intent(this, AutoActivity.class);
-        startActivity(next);
-        saveData();
-    }
-
-    /**
-     * Moves the xml/page to stage
-     *
-     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
-     */
-    public void toStage(View view){
-        Intent next = new Intent(this, StageActivity.class);
-        startActivity(next);
-        saveData();
-    }
-
-    /**
      * Sets all values to the ones in RecordsActivity so pages don't change whenever you switch between them
      */
     public void setPrevious(){
@@ -148,6 +151,9 @@ public class TeleActivity extends AppCompatActivity {
         teleAmpNotesMissedCountText.setText(String.valueOf(teleAmpNotesMissedCount));
         teleSpeakerNotesMissedCount = RecordsActivity.Info.teleSpeakerNotesMissed;
         teleSpeakerNotesMissedCountText.setText(String.valueOf(teleSpeakerNotesMissedCount));
+        diedCheck.setChecked(RecordsActivity.Info.died);
+        brokeCheck.setChecked(RecordsActivity.Info.broke);
+        defenseCheck.setChecked(RecordsActivity.Info.defense);
         teleComments.setText(RecordsActivity.Info.teleComments);
     }
 
@@ -159,6 +165,9 @@ public class TeleActivity extends AppCompatActivity {
         RecordsActivity.Info.teleSpeakerNotes = teleSpeakerNotesCount;
         RecordsActivity.Info.teleAmpNotesMissed = teleAmpNotesMissedCount;
         RecordsActivity.Info.teleSpeakerNotesMissed = teleSpeakerNotesMissedCount;
+        RecordsActivity.Info.died= diedCheck.isChecked();
+        RecordsActivity.Info.broke = brokeCheck.isChecked();
+        RecordsActivity.Info.defense = defenseCheck.isChecked();
         RecordsActivity.Info.teleComments = teleComments.getText().toString();
     }
 }
