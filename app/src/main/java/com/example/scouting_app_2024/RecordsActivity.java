@@ -22,10 +22,13 @@ public class RecordsActivity {
         public static byte teleSpeakerNotes = 0;
         public static byte teleAmpNotesMissed = 0;
         public static byte teleSpeakerNotesMissed = 0;
+        public static boolean died = false;
+        public static boolean broke = false;
+        public static boolean defense = false;
         public static String teleComments = "";
         public static byte cycles = 0;
         //stage activity
-        public static byte stageLevel = 0;
+        public static String stageLevel = "";
         public static boolean harmony = false;
         public static boolean trap = false;
         public static String stageComments = "";
@@ -87,6 +90,9 @@ public class RecordsActivity {
             json += String.format("\t%s",teleSpeakerNotes);
             json += String.format("\t%s",teleSpeakerNotesMissed);
             json += String.format("\t%s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
+            json += String.format("\t%s",printBoolean(died));
+            json += String.format("\t%s",printBoolean(broke));
+            json += String.format("\t%s",printBoolean(defense));
             json += String.format("\t%s",teleComments);
             json += String.format("\t%s",cycles);
             //stage activity
@@ -120,10 +126,13 @@ public class RecordsActivity {
             teleSpeakerNotes = 0;
             teleAmpNotesMissed = 0;
             teleSpeakerNotesMissed = 0;
+            died = false;
+            broke = false;
+            defense = false;
             teleComments = "";
             cycles = 0;
             //stage activity
-            stageLevel = 0;
+            stageLevel = "";
             harmony = false;
             trap = false;
             stageComments = "";
