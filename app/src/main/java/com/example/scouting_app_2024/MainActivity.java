@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton blue1, blue2, blue3, pos1, pos2, pos3, pos4;
     RadioButton[] positions;
     int checkedPosition = -1;
-    int[] teamList = {935, 937, 1710, 1723, 1730, 1763, 1764, 1769, 1775, 1827, 1847, 1986, 1987, 1994, 2345, 2357, 2410, 2457, 2470, 2560, 3061, 3184, 4809, 4959, 5098, 5119, 5126, 5141, 5189, 5268, 5801, 7421, 8719, 8825, 9445, 9551};
+    int[] teamList = {937, 1108, 1723, 1730, 1763, 1764, 1769, 1775, 1802, 1806, 1810, 1825, 1847, 1939, 1982, 1987, 1997, 2001, 2345, 2357, 2457, 2972, 4213, 4455, 4522, 4766, 4959, 5098, 5126, 5454, 5801, 5809, 5918, 6805, 6843, 7064, 7531, 8112, 8825, 9316, 9410, 9626};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Moves the xml/page to auto
+     * Moves the xml/page to auto as long as the team number is a valid team number
      *
      * @param view Makes the method viewable to the xml and allows you to assign the method to a button
      */
@@ -45,6 +45,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(next);
             saveData();
         }
+    }
+
+    /**
+     * Checks the enteblue team number in the team list to see if the team is a valid team
+     *
+     * @param teamNum team number enteblue by scout
+     *
+     * @return true or false
+     */
+    public boolean checkTeams(int teamNum) {
+        for (int i = 0; i < teamList.length; i++){
+            if (teamList[i] == teamNum){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -82,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         matchNumber.setText(RecordsActivity.Info.matchNumber);
         teamNumber.setText(RecordsActivity.Info.teamNumber);
         preloadCheck.setChecked(RecordsActivity.Info.preload);
+
         switch (RecordsActivity.Info.driverStation) {
             case "Blue 1":
                 blue1.setChecked(true);
@@ -126,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.matchNumber = matchNumber.getText().toString();
         RecordsActivity.Info.teamNumber = teamNumber.getText().toString();
         RecordsActivity.Info.preload = preloadCheck.isChecked();
+
         if(blue1.isChecked()){
             RecordsActivity.Info.driverStation = "Blue 1";
         } else if (blue2.isChecked()){
@@ -135,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             RecordsActivity.Info.driverStation = "";
         }
+
         switch (checkedPosition){
             case 0:
                 RecordsActivity.Info.fieldPosition = 1;
@@ -153,16 +172,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-    }
-
-
-
-    public boolean checkTeams(int num) {
-        for (int i = 0; i < teamList.length; i++){
-            if (teamList[i] == num){
-                return true;
-            }
-        }
-        return false;
     }
 }
