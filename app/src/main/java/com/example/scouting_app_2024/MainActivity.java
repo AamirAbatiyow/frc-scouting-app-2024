@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton red1, red2, red3, pos1, pos2, pos3, pos4;
     RadioButton[] positions;
     int checkedPosition = -1;
-    int[] teamList = {935, 937, 1710, 1723, 1730, 1763, 1764, 1769, 1775, 1827, 1847, 1986, 1987, 1994, 2345, 2357, 2410, 2457, 2470, 2560, 3061, 3184, 4809, 4959, 5098, 5119, 5126, 5141, 5189, 5268, 5801, 7421, 8719, 8825, 9445, 9551};
+    int[] teamList = {937, 1108, 1723, 1730, 1763, 1764, 1769, 1775, 1802, 1806, 1810, 1825, 1847, 1939, 1982, 1987, 1997, 2001, 2345, 2357, 2457, 2972, 4213, 4455, 4522, 4766, 4959, 5098, 5126, 5454, 5801, 5809, 5918, 6805, 6843, 7064, 7531, 8112, 8825, 9316, 9410, 9626};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
