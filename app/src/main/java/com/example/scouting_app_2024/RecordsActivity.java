@@ -22,6 +22,7 @@ public class RecordsActivity {
         public static byte teleSpeakerNotes = 0;
         public static byte teleAmpNotesMissed = 0;
         public static byte teleSpeakerNotesMissed = 0;
+        public static byte passes = 0;
         public static boolean died = false;
         public static boolean broke = false;
         public static boolean defense = false;
@@ -68,8 +69,8 @@ public class RecordsActivity {
         public static String CreateJSON() {
             cycles = (byte)(teleAmpNotes+teleAmpNotesMissed+teleSpeakerNotes+teleSpeakerNotesMissed);
             //main activity
-            String json = String.format("%s",matchNumber);
-            json += String.format("\t%s",teamNumber);
+            String json = String.format("%s",teamNumber);
+            json += String.format("\t%s",matchNumber);
             json += String.format("\t%s",printBoolean(preload));
             json += String.format("\t%s",driverStation);
             json += String.format("\t%s",fieldPosition);
@@ -95,6 +96,8 @@ public class RecordsActivity {
             json += String.format("\t%s",printBoolean(defense));
             json += String.format("\t%s",teleComments);
             json += String.format("\t%s",cycles);
+            json += String.format("\t%s",passes);
+
             //stage activity
             json += String.format("\t%s",stageLevel);
             json += String.format("\t%s",printBoolean(harmony));
@@ -126,6 +129,7 @@ public class RecordsActivity {
             teleSpeakerNotes = 0;
             teleAmpNotesMissed = 0;
             teleSpeakerNotesMissed = 0;
+            passes = 0;
             died = false;
             broke = false;
             defense = false;

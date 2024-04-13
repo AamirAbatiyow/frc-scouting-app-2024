@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TeleActivity extends AppCompatActivity {
-    TextView teleAmpNotesCountText, teleSpeakerNotesCountText, teleAmpNotesMissedCountText, teleSpeakerNotesMissedCountText;
-    byte teleAmpNotesCount, teleSpeakerNotesCount, teleAmpNotesMissedCount, teleSpeakerNotesMissedCount;
+    TextView teleAmpNotesCountText, teleSpeakerNotesCountText, teleAmpNotesMissedCountText, teleSpeakerNotesMissedCountText, telePassesCountText;
+    byte teleAmpNotesCount, teleSpeakerNotesCount, teleAmpNotesMissedCount, teleSpeakerNotesMissedCount, telePassesCount;
     CheckBox diedCheck, brokeCheck, defenseCheck;
     EditText teleComments;
     @Override
@@ -22,6 +22,7 @@ public class TeleActivity extends AppCompatActivity {
         teleSpeakerNotesCountText = findViewById(R.id.teleSpeakerNotesCountTextView);
         teleAmpNotesMissedCountText = findViewById(R.id.teleAmpNotesMissedCountTextView);
         teleSpeakerNotesMissedCountText = findViewById(R.id.teleSpeakerNotesMissedCountTextView);
+        telePassesCountText = findViewById(R.id.passesCountTextView);
         diedCheck = findViewById(R.id.diedCheckBox);
         brokeCheck = findViewById(R.id.brokeCheckBox);
         defenseCheck = findViewById(R.id.defenseCheckBox);
@@ -140,6 +141,28 @@ public class TeleActivity extends AppCompatActivity {
     }
 
     /**
+     * Increments the pass count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleIncrementPass(View view){
+        telePassesCount++;
+        telePassesCountText.setText(String.valueOf(telePassesCount));
+    }
+
+    /**
+     * Decrements the pass count and updates the text
+     *
+     * @param view Makes the method viewable to the xml and allows you to assign the method to a button
+     */
+    public void teleDecrementPass(View view){
+        if (telePassesCount != 0) {
+            telePassesCount--;
+            telePassesCountText.setText(String.valueOf(telePassesCount));
+        }
+    }
+
+    /**
      * Sets all values to the ones in RecordsActivity so pages don't change whenever you switch between them
      */
     public void setPrevious(){
@@ -151,6 +174,8 @@ public class TeleActivity extends AppCompatActivity {
         teleAmpNotesMissedCountText.setText(String.valueOf(teleAmpNotesMissedCount));
         teleSpeakerNotesMissedCount = RecordsActivity.Info.teleSpeakerNotesMissed;
         teleSpeakerNotesMissedCountText.setText(String.valueOf(teleSpeakerNotesMissedCount));
+        telePassesCount = RecordsActivity.Info.passes;
+        telePassesCountText.setText(String.valueOf(telePassesCount));
         diedCheck.setChecked(RecordsActivity.Info.died);
         brokeCheck.setChecked(RecordsActivity.Info.broke);
         defenseCheck.setChecked(RecordsActivity.Info.defense);
@@ -165,6 +190,7 @@ public class TeleActivity extends AppCompatActivity {
         RecordsActivity.Info.teleSpeakerNotes = teleSpeakerNotesCount;
         RecordsActivity.Info.teleAmpNotesMissed = teleAmpNotesMissedCount;
         RecordsActivity.Info.teleSpeakerNotesMissed = teleSpeakerNotesMissedCount;
+        RecordsActivity.Info.passes = telePassesCount;
         RecordsActivity.Info.died= diedCheck.isChecked();
         RecordsActivity.Info.broke = brokeCheck.isChecked();
         RecordsActivity.Info.defense = defenseCheck.isChecked();
