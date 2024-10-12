@@ -70,40 +70,40 @@ public class RecordsActivity {
             cycles = (byte)(teleAmpNotes+teleAmpNotesMissed+teleSpeakerNotes+teleSpeakerNotesMissed);
             //main activity
             String json = String.format("%s",teamNumber);
-            json += String.format("\t%s",matchNumber);
-            json += String.format("\t%s",printBoolean(preload));
-            json += String.format("\t%s",driverStation);
-            json += String.format("\t%s",fieldPosition);
+            json += String.format("*%s",matchNumber);
+            json += String.format("*%s",printBoolean(preload));
+            json += String.format("*%s",driverStation);
+            json += String.format("*%s",fieldPosition);
             //auto activity
-            json += String.format("\t%s",autoNotesMissed);
-            json += String.format("\t%s",printBoolean(leave));
-            json += String.format("\t%s",autoAmpNotes);
-            json += String.format("\t%s",autoAmpNotesMissed);
-            json += String.format("\t%s",getPercentage(autoAmpNotes, autoAmpNotesMissed));
-            json += String.format("\t%s",autoSpeakerNotes);
-            json += String.format("\t%s",autoSpeakerNotesMissed);
-            json += String.format("\t%s",getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
-            json += String.format("\t%s",autoComments);
+            json += String.format("*%s",autoNotesMissed);
+            json += String.format("*%s",printBoolean(leave));
+            json += String.format("*%s",autoAmpNotes);
+            json += String.format("*%s",autoAmpNotesMissed);
+            json += String.format("*%s",(int)getPercentage(autoAmpNotes, autoAmpNotesMissed));
+            json += String.format("*%s",autoSpeakerNotes);
+            json += String.format("*%s",autoSpeakerNotesMissed);
+            json += String.format("*%s",(int)getPercentage(autoSpeakerNotes, autoSpeakerNotesMissed));
+            json += String.format("*%s",autoComments);
             //tele activity
-            json += String.format("\t%s",teleAmpNotes);
-            json += String.format("\t%s",teleAmpNotesMissed);
-            json += String.format("\t%s",getPercentage(teleAmpNotes, teleAmpNotesMissed));
-            json += String.format("\t%s",teleSpeakerNotes);
-            json += String.format("\t%s",teleSpeakerNotesMissed);
-            json += String.format("\t%s",getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
-            json += String.format("\t%s",printBoolean(died));
-            json += String.format("\t%s",printBoolean(broke));
-            json += String.format("\t%s",printBoolean(defense));
-            json += String.format("\t%s",teleComments);
-            json += String.format("\t%s",cycles);
-            json += String.format("\t%s",passes);
+            json += String.format("*%s",teleAmpNotes);
+            json += String.format("*%s",teleAmpNotesMissed);
+            json += String.format("*%s",(int)getPercentage(teleAmpNotes, teleAmpNotesMissed));
+            json += String.format("*%s",teleSpeakerNotes);
+            json += String.format("*%s",teleSpeakerNotesMissed);
+            json += String.format("*%s",(int)getPercentage(teleSpeakerNotes, teleSpeakerNotesMissed));
+            json += String.format("*%s",printBoolean(died));
+            json += String.format("*%s",printBoolean(broke));
+            json += String.format("*%s",printBoolean(defense));
+            json += String.format("*%s",teleComments);
+            json += String.format("*%s",cycles);
+            json += String.format("*%s",passes);
 
             //stage activity
-            json += String.format("\t%s",stageLevel);
-            json += String.format("\t%s",printBoolean(harmony));
-            json += String.format("\t%s",printBoolean(trap));
-            json += String.format("\t%s",stageComments);
-            json += String.format("\t%s",scoutName);
+            json += String.format("*%s",stageLevel);
+            json += String.format("*%s",printBoolean(harmony));
+            json += String.format("*%s",printBoolean(trap));
+            json += String.format("*%s",stageComments);
+            json += String.format("*%s",scoutName);
             return json;
         }
 

@@ -100,13 +100,13 @@ public class MainActivity extends AppCompatActivity {
         preloadCheck.setChecked(RecordsActivity.Info.preload);
 
         switch (RecordsActivity.Info.driverStation) {
-            case "Red 1":
+            case "Red1":
                 red1.setChecked(true);
                 break;
-            case "Red 2":
+            case "Red2":
                 red2.setChecked(true);
                 break;
-            case "Red 3":
+            case "Red3":
                 red3.setChecked(true);
                 break;
             default:
@@ -145,11 +145,11 @@ public class MainActivity extends AppCompatActivity {
         RecordsActivity.Info.preload = preloadCheck.isChecked();
 
         if(red1.isChecked()){
-            RecordsActivity.Info.driverStation = "Red 1";
+            RecordsActivity.Info.driverStation = "Red1";
         } else if (red2.isChecked()){
-            RecordsActivity.Info.driverStation = "Red 2";
+            RecordsActivity.Info.driverStation = "Red2";
         } else if (red3.isChecked()){
-            RecordsActivity.Info.driverStation = "Red 3";
+            RecordsActivity.Info.driverStation = "Red3";
         } else {
             RecordsActivity.Info.driverStation = "";
         }
